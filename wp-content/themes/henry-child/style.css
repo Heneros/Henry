@@ -1,0 +1,11 @@
+/*
+Theme Name: Henry
+Theme URI: https://github.com/heneros
+Description: A child theme 
+Author: Heneros
+Author URI: http://example.com
+Template: popper
+Version: 0.0.1
+*/
+
+@import url("../popper/style.css");
