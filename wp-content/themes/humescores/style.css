@@ -228,13 +228,39 @@ select,
 textarea {
   color: #404040;
   font-family: "PT Serif", Georgia, Cambria, Times serif;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.5; }
+  @media screen and (min-width: 700px) {
+    body,
+    button,
+    input,
+    select,
+    textarea {
+      font-size: 20px;
+      font-size: 1.25rem; } }
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
   font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", sans-serif; }
+
+h1 {
+  font-size: 3em; }
+
+h2 {
+  font-size: 2.6em; }
+
+h3 {
+  font-size: 2.2em; }
+
+h4 {
+  font-size: 2em; }
+
+h5 {
+  font-size: 1.7em; }
+
+h6 {
+  font-size: 1.6em; }
 
 p {
   margin-bottom: 1.5em; }
@@ -251,8 +277,8 @@ address {
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 18.75px;
+  font-size: 1.17188rem;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -261,8 +287,8 @@ pre {
 
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: 15px;
-  font-size: 0.9375rem; }
+  font-size: 18.75px;
+  font-size: 1.17188rem; }
 
 abbr, acronym {
   border-bottom: 1px dotted #666;
@@ -331,7 +357,7 @@ img {
   /* Adhere to container width. */ }
 
 figure {
-  margin: 1em 0;
+  margin: 0;
   /* Extra wide images within figure tags don't overflow the content area. */ }
 
 table {
@@ -352,8 +378,8 @@ input[type="submit"] {
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1;
   padding: .6em 1em .4em;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
@@ -523,8 +549,8 @@ a {
     clip: auto !important;
     color: #21759b;
     display: block;
-    font-size: 14px;
-    font-size: 0.875rem;
+    font-size: 17.5px;
+    font-size: 1.09375rem;
     font-weight: bold;
     height: auto;
     left: 5px;
@@ -587,17 +613,71 @@ a {
   clear: both; }
 
 /*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-.widget {
-  margin: 0 0 1.5em;
-  /* Make sure select elements fit in widgets. */ }
-  .widget select {
-    max-width: 100%; }
-
-/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Global layouts
+--------------------------------------------------------------*/
+.site-content {
+  padding: 1em; }
+  @media screen and (min-width: 600px) {
+    .site-content {
+      padding: 2em; } }
+
+/*--------------------------------------------------------------
+## Global layouts
+--------------------------------------------------------------*/
+.header-image {
+  max-height: 60vh;
+  overflow: hidden; }
+  .header-image img {
+    display: block;
+    width: 100vw; }
+
+.site-header {
+  position: relative;
+  padding: 1em;
+  font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  color: #fff;
+  background-color: #002254; }
+  @media screen and (min-width: 600px) {
+    .site-header {
+      padding: 1em 2em; } }
+
+.site-branding {
+  min-height: 65px; }
+
+.site-title {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6em;
+  font-weight: 900;
+  line-height: 1em; }
+  .site-title a {
+    color: white;
+    text-decoration: none; }
+    .site-title a:hover, .site-title a:focus {
+      text-decoration: underline; }
+
+.site-description {
+  margin: 0;
+  font-size: .9em;
+  font-style: italic;
+  font-weight: 100; }
+
+@media screen and (min-width: 900px) {
+  .site-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  .site-branding {
+    width: 35%; }
+  .site-navigation {
+    width: 55%; } }
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -632,6 +712,15 @@ a {
 
 .bypostauthor {
   display: block; }
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+  margin: 0 0 1.5em;
+  /* Make sure select elements fit in widgets. */ }
+  .widget select {
+    max-width: 100%; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
