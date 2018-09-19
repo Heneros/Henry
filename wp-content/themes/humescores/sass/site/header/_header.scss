@@ -53,11 +53,17 @@
 	.site-header{
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
 	}
 	.site-branding{
 		width: 35%;
+		flex: 1 0 auto;
 	}
 	.site-navigation{
 		width: 55%;
 	}
 }
+
+
+
+@import "header-menu";
