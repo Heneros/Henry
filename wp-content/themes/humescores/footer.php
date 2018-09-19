@@ -14,6 +14,10 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+<nav class="social-menu">
+<?php wp_nav_menu( array('theme_location' => 'social') );?>
+</nav>
+	
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'humescores' ) ); ?>">
 				<?php
