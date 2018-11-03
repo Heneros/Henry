@@ -1,10 +1,10 @@
 .main-navigation {
 	display: block;
-
+	
 	font-family: $font__sans;
 	font-weight: 400;
 	clear: left;
-
+	
 	ul {
 		display: none;
 		list-style: none;
@@ -23,7 +23,7 @@
 
 			li {
 				padding-left: 1em;
-
+				
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
@@ -52,20 +52,20 @@
 		text-decoration: none;
 		color: #fff;
 	}
-
+	
 	a:hover,
 	a:focus {
 		text-decoration: underline;
 	}
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}
-
+	// .current_page_item > a,
+	// .current-menu-item > a,
+	// .current_page_ancestor > a,
+	// .current-menu-ancestor > a {
+	// }
+	
 	.menu-item-has-children,
-	.page_item_has_children {
+	.page-item-has-children {
 		min-width: 218px;
 	}
 	.menu-item-has-children > a,
@@ -83,6 +83,7 @@ button.dropdown-toggle {
 	line-height: 1.5em;
 	padding: .4em 1em .4em .5em;
 }
+
 .menu-toggle {
 	position: absolute;
 	top: 0;
@@ -96,7 +97,7 @@ button.dropdown-toggle {
 	border: 1px solid hsla(0, 0%, 100%, .3);
 }
 
-/* Toggle small menu and children on */
+/* Toggle small menu and sub-menus on */
 .toggled-on ul,
 .sub-menu.toggled-on {
 	display: block;
@@ -106,20 +107,20 @@ button.dropdown-toggle {
 	.menu-toggle {
 		display: none;
 	}
-
+	
 	.main-navigation {
-
+		
 		.menu-item-has-children > a,
 		.page_item_has_children > a {
 			padding-right: 2em;
 			background: hsla(0, 0%, 100%, .1);
 		}
-
+		
 		ul {
 			display: block;
 			display: flex;
 			flex-wrap: wrap;
-
+			
 			ul {
 				flex-direction: column;
 				background: hsla(0, 0%, 100%, .1);
@@ -127,41 +128,32 @@ button.dropdown-toggle {
 
 				li {
 					padding-left: 0;
-
+					
 					a {
 						width: 218px;
 						background: none;
 					}
 				}
 			}
-
+			
 			li {
-
+					
 				a {
-					padding: .4em 1em;
+					padding: .4em 1em; 
 				}
 			}
 		}
-
+		
 	}
-
 }
 
 @media screen and (min-width: $query__medium) {
 	.main-navigation {
-
+		
 		ul {
 			justify-content: flex-end;
 			padding-top: 0;
-
-			/* If you want dropdowns to open on hover, uncomment this: */
-			/*
-			li:hover > ul,
-				li:focus > ul {
-				display: block;
-			}
-			*/
 		}
-
+		
 	}
 }
