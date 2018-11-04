@@ -347,6 +347,13 @@ button.dropdown-toggle { position: absolute; right: 0; border: none; background:
 .bypostauthor { display: block; }
 
 /*--------------------------------------------------------------
+## footer
+--------------------------------------------------------------*/
+.site-footer { position: relative; padding: 1em; font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif; color: #fff; background-color: #002254; text-align: center; }
+
+@media screen and (min-width: 600px) { .site-footer { padding: 1em 2em; } }
+
+/*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 .widget { margin: 0 0 1.5em; /* Make sure select elements fit in widgets. */ }
