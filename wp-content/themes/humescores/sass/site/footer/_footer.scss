@@ -11,24 +11,24 @@
 	}
 }
 
-.social-menu{
-
-	ul{
+.social-menu {
+	ul {
 		display: flex;
 		justify-content: center;
+		flex-wrap: wrap;
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
-
-		a{
+		
+		a {
 			display: block;
 			padding: .5em 1em;
-			color: #fff;
+			color: white;
 			text-decoration: none;
-
+			
 			&:hover,
-			&:focus{
-      text-decoration: underline;
+			&:focus {
+				text-decoration: underline;
 			}
 		}
 	}
