@@ -423,6 +423,17 @@ button.dropdown-toggle { position: absolute; right: 0; border: none; background:
   .no-sidebar .post-content__wrap .byline:before, .no-sidebar .post-content__wrap .byline:after, .no-sidebar .post-content__wrap .posted-on:before, .no-sidebar .post-content__wrap .posted-on:after, .no-sidebar .post-content__wrap .comments-link:before, .no-sidebar .post-content__wrap .comments-link:after, .no-sidebar .post-content__wrap .edit-link:before, .no-sidebar .post-content__wrap .edit-link:after { margin: 0; content: ""; }
   .no-sidebar .post-content__wrap .extra { display: inline; } }
 
+/* Single Post Featured Images */
+.full-bleed { width: 100vw; max-height: 1200px; margin-top: 1em; margin-left: -1em; border-top: 1px solid #e6e6e6; border-bottom: 1px solid #e6e6e6; overflow: hidden; }
+
+@media screen and (min-width: 600px) { .full-bleed { margin-left: -2em; } }
+
+@media screen and (min-width: 900px) { .full-bleed { margin-top: 1.5em; margin-right: -2em; } }
+
+@media screen and (min-width: 1080px) { .full-bleed { margin-right: calc( ((-100vw + 1080px)/2) - 2em); margin-left: calc( ((-100vw + 1080px)/2) - 2em); } }
+
+.full-bleed img { display: block; margin: 0 auto; }
+
 .page-content, .entry-content, .entry-summary { margin: 1.5em 0 0; }
 
 .page-links { clear: both; margin: 0 0 1.5em; }
