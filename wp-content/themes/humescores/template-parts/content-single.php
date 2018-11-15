@@ -30,9 +30,11 @@
 	<?php
 	if ( has_post_thumbnail() ) { ?>
 	<figure class="featured-image full-bleed">
+	<a href="<?php echo esc_url( get_permalink() ) ?> " rel="bookmark">
 		<?php
-		the_post_thumbnail('humescores-full-bleed');
+		the_post_thumbnail('humescores-index-img');
 		?>
+	</a>
 	</figure><!-- .featured-image full-bleed -->
 	<?php } ?>
 

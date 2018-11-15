@@ -10,7 +10,15 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	 <?php
+	if ( has_post_thumbnail() ) { ?>
+	<figure class="featured-image index-image">
+		<?php
+		the_post_thumbnail();
+		?>
+	</figure><!-- .featured-image full-bleed -->
+	<?php } ?>
+	 <header class="entry-header">
 		<?php humescores_the_category_list(); ?>
 		<?php
 		if ( is_single() ) :

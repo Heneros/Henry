@@ -310,6 +310,10 @@ a:hover, a:active { outline: 0; }
   .archive-view.has-sidebar .content-area { width: 60%; }
   .archive-view.has-sidebar .widget-area { width: 30%; } }
 
+.index-image img { display: block; margin: 0 auto; }
+
+.index-image a:focus > img, .index-image a:hover > img { opacity: .8; }
+
 .continue-reading { position: absolute; right: 0; bottom: 0; font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif; }
 
 .continue-reading a { display: block; padding: .5em 1em; font-size: 90%; text-decoration: none; background: #d9d9d9; }
