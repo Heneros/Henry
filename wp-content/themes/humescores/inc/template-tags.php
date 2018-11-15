@@ -143,3 +143,13 @@ function humescores_post_navigation() {
 			'<span class="post-title">%title</span>',
 	) );
 }
+
+function humescrores_excerpt_more( $more ){
+	return "More";
+}
+add_filter('excerpt_more', 'humescrores_excerpt_more');
+
+function humescores_excerpt_length( $length ){
+	return 100;
+}
+add_filter('excerpt_length', 'humescores_excerpt_length');
