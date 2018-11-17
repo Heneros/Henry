@@ -1,5 +1,5 @@
 # Henry
-Themes of WordPress
+Themes from WordPress
 
 
 # For starting
