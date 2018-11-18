@@ -261,6 +261,10 @@ a:hover, a:active { outline: 0; }
 
 .pagination .current { font-weight: 600; color: #b51c35; }
 
+.pagination .prev .icon { margin-right: 1em; }
+
+.pagination .next .icon { margin-left: 1em; }
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -284,9 +288,9 @@ a:hover, a:active { outline: 0; }
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
-.clear:before, .clear:after, .entry-content:before, .entry-content:after, .comment-content:before, .comment-content:after, .site-content:before, .site-content:after, .site-footer:before, .site-footer:after { content: ""; display: table; table-layout: fixed; }
+.clear:before, .clear:after, .entry-content:before, .entry-content:after, .comment-content:before, .comment-content:after, .site-content:before, .site-content:after { content: ""; display: table; table-layout: fixed; }
 
-.clear:after, .entry-content:after, .comment-content:after, .site-content:after, .site-footer:after { clear: both; }
+.clear:after, .entry-content:after, .comment-content:after, .site-content:after { clear: both; }
 
 /*--------------------------------------------------------------
 # Content
@@ -300,10 +304,13 @@ a:hover, a:active { outline: 0; }
 
 .site-content { max-width: 1080px; margin: 0 auto; }
 
-@media screen and (min-width: 900px) { .single.has-sidebar .hentry { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
-  .single.has-sidebar .hentry .entry-header { width: 100%; -webkit-box-flex: 1; -ms-flex: 1 0 100%; flex: 1 0 100%; }
-  .single.has-sidebar .hentry .post-content { width: 60%; }
-  .single.has-sidebar .hentry .widget-area { width: 30%; } }
+/* Single posts */
+@media screen and (min-width: 900px) { .single.has-sidebar .hentry, .page .hentry { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+  .single.has-sidebar .hentry .entry-header, .page .hentry .entry-header { width: 100%; -webkit-box-flex: 1; -ms-flex: 1 0 100%; flex: 1 0 100%; }
+  .single.has-sidebar .hentry .post-content, .page .hentry .post-content { width: 60%; }
+  .single.has-sidebar .hentry .widget-area, .page .hentry .widget-area { width: 30%; }
+  .page.has-page-sidebar .hentry { -webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse; flex-direction: row-reverse; }
+  .page:not(.has-page-sidebar) .hentry { -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; } }
 
 @media screen and (min-width: 900px) { .single.no-sidebar .post-content__wrap { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
   .single.no-sidebar .post-content__wrap .entry-meta { width: 20%; }
@@ -314,13 +321,31 @@ a:hover, a:active { outline: 0; }
 --------------------------------------------------------------*/
 .archive-view { background-color: #eee; }
 
-.archive-view .post { position: relative; background: white; }
+.archive-view .post, .archive-view .page { position: relative; background: white; }
 
 .archive-view .post__content { padding: 2em 2em 3em; }
 
 @media screen and (min-width: 900px) { .archive-view.has-sidebar .site-content { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+  .archive-view.has-sidebar .page-header { width: 100%; -webkit-box-flex: 1; -ms-flex: 1 0 100%; flex: 1 0 100%; }
   .archive-view.has-sidebar .content-area { width: 60%; }
   .archive-view.has-sidebar .widget-area { width: 30%; } }
+
+.page-header { font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif; }
+
+.page-title { margin: 0 0 .5em; }
+
+.archive-description { margin: -1em 0 2em; }
+
+/* For content-none.php */
+.search .page-content, .error-404 .page-content { margin-bottom: 2em; padding: 1em 2em; font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif; color: white; background: #b51c35; }
+
+.search input[type="search"], .error-404 input[type="search"] { padding: .5em; }
+
+.search input[type="submit"], .error-404 input[type="submit"] { border-color: white; color: white; }
+
+.search input[type="submit"]:focus, .search input[type="submit"]:hover, .error-404 input[type="submit"]:focus, .error-404 input[type="submit"]:hover { color: black; }
+
+.sticky::before { content: ""; display: block; width: 2em; height: 2em; position: absolute; top: 0; right: 0; border-width: 0 2em 2em 0; border-color: #eee #eee white; border-style: solid; -webkit-box-shadow: -1px 2px 2px rgba(26, 26, 26, 0.1); box-shadow: -1px 2px 2px rgba(26, 26, 26, 0.1); }
 
 .index-image img { display: block; margin: 0 auto; }
 
@@ -562,13 +587,28 @@ button.dropdown-toggle { position: absolute; right: 0; border: none; background:
 --------------------------------------------------------------*/
 .site-footer { position: relative; padding: 1em; font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif; color: #fff; background-color: #002254; text-align: center; }
 
+.site-footer a { font-weight: 700; color: white; text-decoration: none; }
+
+.site-footer a:hover, .site-footer a:focus { text-decoration: underline; }
+
 @media screen and (min-width: 600px) { .site-footer { padding: 1em 2em; } }
+
+.site-footer__wrap { max-width: 1080px; margin: 0 auto; }
+
+@media screen and (min-width: 900px) { .site-footer__wrap { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; } }
+
+.site-info { margin: 1em 0 1em auto; -ms-flex-item-align: center; align-self: center; }
+
+@media screen and (min-width: 900px) { .site-info { text-align: right; }
+  .site-info span { display: block; } }
+
+.social-menu { margin: 1em 0; }
 
 .social-menu ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -ms-flex-wrap: wrap; flex-wrap: wrap; list-style-type: none; margin: 0; padding: 0; }
 
-.social-menu ul a { display: block; padding: .5em 1em; color: white; text-decoration: none; }
+.social-menu ul a { display: block; padding: .5em 1em; color: white; text-decoration: none; opacity: .6; }
 
-.social-menu ul a:hover, .social-menu ul a:focus { text-decoration: underline; }
+.social-menu ul a:hover, .social-menu ul a:focus { text-decoration: underline; opacity: 1; }
 
 /*--------------------------------------------------------------
 # Widgets
@@ -744,5 +784,26 @@ embed, iframe, object { max-width: 100%; }
 .gallery-columns-9 .gallery-item { max-width: 11.11%; }
 
 .gallery-caption { display: block; margin: 0; font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif; border: none; }
+
+/*--------------------------------------------------------------
+## Icons
+--------------------------------------------------------------*/
+/* SVG Icons base styles */
+.icon { display: inline-block; fill: currentColor; height: 1em; position: relative; /* Align more nicely with capital letters */ top: -0.0625em; vertical-align: middle; width: 1em; }
+
+/*--------------------------------------------------------------
+SVG Fallbacks
+--------------------------------------------------------------*/
+.svg-fallback { display: none; }
+
+.no-svg .svg-fallback { display: inline-block; }
+
+.no-svg .nav-links .svg-fallback { padding: 0 .5em; color: inherit; background: inherit; }
+
+/* .no-svg .svg-fallback.icon-arrow-long-left:before { content: "←"; } .no-svg .svg-fallback.icon-arrow-long-right:before { content: "→"; } */
+/* Social Menu fallbacks */
+.no-svg .social-menu a { height: auto; width: auto; }
+
+.no-svg .social-menu li a .screen-reader-text { clip: auto; font-size: 16px; font-size: 1rem; font-weight: 400; height: auto; position: relative !important; /* overrides previous !important styles */ width: auto; }
 
 /*# sourceMappingURL=style.css.map */
